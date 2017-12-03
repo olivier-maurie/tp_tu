@@ -1,7 +1,7 @@
 const { courseList } = require('../../data/db')
 
 mockData = [
-    { id: 1, name: 'Toto', items: [] },
+    { id: 1, name: 'Toto', items: [{item: 'Mon item', bought: false}] },
     { id: 2, name: 'Ma liste', items: [] }
 ]
 

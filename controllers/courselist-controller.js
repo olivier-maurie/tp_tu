@@ -21,7 +21,8 @@ router.post('/', (req, res, next) => {
 
     const newCourseList = {
         id: courseListCollection.length + 1,
-        name
+        name,
+        items: []
     };
 
     courseListCollection.push(newCourseList)

@@ -58,7 +58,8 @@ describe('CourselistController', () => {
                     result.should.not.be.empty
                     result.should.eql({
                         id: res.body.data.id,
-                        name: res.body.data.name
+                        name: res.body.data.name,
+                        items: []
                     })
                 })
         })
@@ -98,8 +99,8 @@ describe('CourselistController', () => {
         it('should  succesfully print all the courseLists', () => {
 
             let data = [
-                { id: 1, name: 'Toto' },
-                { id: 2, name: 'Ma liste' }
+                { id: 1, name: 'Toto', items: [{item: 'Mon item', bought: false}] },
+                { id: 2, name: 'Ma liste', items: [] }
             ];
 
             return request(app)

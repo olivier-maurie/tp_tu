@@ -5,16 +5,14 @@ const NotFoundError = require('./errors/not-found')
 
 const app = express()
 
-const courselistRouter = require('./controllers/courselist-controller')
+const courselistRouter = require('./controllers/courselist-controller');
+const listItemRouter = require('./controllers/listitem-controller')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-// app.get('/', (req, res, next) => {
-//   req.send('OK')
-// })
-
-app.use('/course-lists', courselistRouter)
+app.use('/course-lists', courselistRouter);
+app.use('/course-lists', listItemRouter);
 
 app.use((req, res, next) => {
   return next(new NotFoundError())
