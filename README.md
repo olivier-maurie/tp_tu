@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/juliobasito/test-unitaire-nodejs/badge.svg?branch=master)](https://coveralls.io/github/juliobasito/test-unitaire-nodejs?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/olivier-maurie/tp_tu/badge.svg?branch=master)](https://coveralls.io/github/olivier-maurie/tp_tu?branch=master)
 
 # WIK-NJS-403
 
