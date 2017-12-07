@@ -1,10 +1,9 @@
-const express = require('express')
-const router = express.Router()
-const BadRequestError = require('../errors/bad-request')
-const { find } = require('lodash')
+const express = require('express');
+const router = express.Router();
+const BadRequestError = require('../errors/bad-request');
 
-const db = require('../data/db')
-const courseListCollection = db.courseList
+const db = require('../data/db');
+const courseListCollection = db.courseList;
 
 router.post('/:id/list-item', (req, res, next) => {
 
@@ -23,21 +22,24 @@ router.post('/:id/list-item', (req, res, next) => {
                 if (item.item === item_name) {
                     isDuplicateName = true;
                 }
-            })
+            });
             if (!isDuplicateName) {
-                item.items.push({"course": item_name, "bought": false})
+                item_list.items.push({"course": item_name, "bought": false})
             }
         }
     });
 
     if (isDuplicateName) {
-
         return next(new BadRequestError('VALIDATION', 'An item with this name already exist'))
     }
 
+    console.log('collection', courseListCollection)
+
     res.json({
-        course: item_name,
-        bought: false
+        data: {
+            item: item_name,
+            bought: false
+        }
     })
 });
 
