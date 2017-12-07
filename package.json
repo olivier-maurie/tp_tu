@@ -7,7 +7,9 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "mocha ./test/**/*.spec.js --reporter dot",
-    "test:watch": "mocha -w ./test/**/*.spec.js --reporter dot"
+    "test:watch": "mocha -w ./test/**/*.spec.js --reporter dot",
+    "test-coverage": "nyc --reporter=text mocha ./test/**/*.spec.js",
+    "test-coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +20,9 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
     "sinon": "^4.1.2",
     "supertest": "^3.0.0"
   }
