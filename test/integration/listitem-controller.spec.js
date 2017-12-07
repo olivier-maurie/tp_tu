@@ -19,7 +19,7 @@ describe('CourselistController', () => {
         listItemFixtures.down()
     });
 
-    describe('When I create a courseList (POST /course-lists)', () => {
+    describe('When I add course item (POST /course-lists/:id/list-item)', () => {
         it('should reject with a 400 when no name is given', () => {
             return request(app).post('/course-lists/1/list-item').then((res) => {
                 res.status.should.equal(400);
